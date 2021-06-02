@@ -1,0 +1,56 @@
+body{
+  background-color: rgb(211, 210, 210);
+ max-height: 100%;
+}
+
+#container{
+  margin: 5% auto 0;
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+ 
+  
+}
+
+canvas {
+  margin: 5% auto;
+  width: 90%;
+  height: 250px;
+  /* to make square rooted canvas */
+  background-size: 10px 10px;
+  background-image: linear-gradient(to right, rgba(128, 128, 128, 0.397) 1px, transparent 1px), linear-gradient(to bottom, rgba(128, 128, 128, 0.397), transparent 1px); 
+  border: 1px black solid;
+}
+
+fieldset {
+  border: 1px solid #000;
+  border-radius: 7px;
+  max-width: max-content;
+  margin-left: 10%;
+}
+
+legend{
+  font-size: inherit;
+  width: inherit;
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: .2rem;
+  font-size: 0.7rem;
+}
+
+input{
+  width: 80%;
+  border: none;
+  margin-bottom: 5%;
+}
+
+.calculate-btn{
+  float: left;
+  margin-left: 10%;
+  margin-top: 12%;
+  margin-bottom: 15%;
+}
+
+
