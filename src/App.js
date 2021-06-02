@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./styles.css";
+import triangleType from "./triangleType"
 
 const GetContent = () => {
   //values for each side
@@ -74,28 +75,6 @@ const GetContent = () => {
         ctx.fillStyle = "white";
         ctx.fill(path);
         ctx.stroke(path);
-
-        //
-        const triangleType = (side1, side2, side3) => {
-          //check, if exists
-          if (
-            side1 + side2 <= side3 ||
-            side1 + side3 <= side2 ||
-            side2 + side3 <= side1
-          ) {
-            return "Non existing";
-          }
-
-          if (side1 === side2 && side2 === side3) {
-            return "Equilateral";
-          }
-
-          if (side1 === side2 || side1 === side3 || side2 === side3) {
-            return "Isosceles";
-          }
-
-          return "Scalene";
-        };
 
         //canvas text
         if (values.AB && values.BC && values.AC) {

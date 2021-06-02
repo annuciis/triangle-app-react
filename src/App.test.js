@@ -1,23 +1,25 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import triangleType from "./triangleType"
 
 
 
-test('To be assigned all sides', () => {
-  expect(values.AB).toBeDefined();
-  expect(values.BC).toBeDefined();
-  expect(values.AC).toBeDefined();
-});
+test('Similar sides to be "Equilateral"', () => {
+  expect(triangleType(1,1,1)).toBe("Equilateral")
+  expect(triangleType(2,3,2)).not.toBe("Equilateral")
+}) 
 
-test('All sides to be greater than 0', () => {
-  expect(values.AB).toBeGreaterThan(0);
-  expect(values.BC).toBeGreaterThan(0);
-  expect(values.AC).toBeGreaterThan(0);
-});
+test('Non existing triangle to be "Non existing"', () => {
+  expect(triangleType(10,2,1)).toBe("Non existing")
+  expect(triangleType(1,1,9)).toBe("Non existing")
+  expect(triangleType(1,5,1)).toBe("Non existing")
+}) 
 
+test('2 sides with the same length to be "Isosceles"', () => {
+  expect(triangleType(2,2,1)).toBe("Isosceles")
+  expect(triangleType(5,4,5)).toBe("Isosceles")
+  expect(triangleType(3,4,4)).toBe("Isosceles")
+})
 
-test('All side inputs do not contain any letter', () => {
-  expect(values.AB).not.toMatch([A-Za-z]);
-  expect(values.BC).not.toMatch([A-Za-z]);
-  expect(values.AC).not.toMatch([A-Za-z]);
+test('Different all 3 sides(but exists) to be "Scalene"', () => {
+  expect(triangleType(5,2,4)).toBe("Scalene")
 })
