@@ -1,10 +1,7 @@
 const triangleType = (side1, side2, side3) => {
     //check, if exists
-    if (
-      side1 + side2 <= side3 ||
-      side1 + side3 <= side2 ||
-      side2 + side3 <= side1
-    ) {
+    if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1)
+    {
       return "Non existing";
     }
 
