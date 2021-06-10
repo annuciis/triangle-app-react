@@ -31,7 +31,7 @@ const GetContent = () => {
     };
 
   //replacing old values of each side(empty strings) to new values
-  const set = (side_len) => {
+  const set = side_len => {
     return ({ target: { value } }) => {
       setValues((oldValues) => ({ ...oldValues, [side_len]: value }));
     };
