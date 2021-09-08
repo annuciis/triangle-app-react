@@ -13,7 +13,7 @@ pipeline {
      
     stage('Test') {
       steps {
-         bat 'npm test --watchAll --testMatch "**/src/**/*.test.js"'
+         bat 'npm test --watchAll --testMatch ./src/*.test.js'
       }
     }      
   }
