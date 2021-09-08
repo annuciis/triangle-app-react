@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import triangleType from "./triangleType"
+import triangleType from "../triangleType"
 
 
 
