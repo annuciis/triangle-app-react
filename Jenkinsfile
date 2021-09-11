@@ -13,7 +13,7 @@ pipeline {
      
     stage('Test') {
       steps {
-         bat 'npm test --watchAll'
+         bat 'npm test'
       }
     }      
   }
