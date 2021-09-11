@@ -1,5 +1,11 @@
 import triangleType from "./triangleType"
+import App from './App'
+import './setupTests'
+import { shallow } from "enzyme";
 
+it("renders without crashing", () => {
+  shallow(<App />);
+});
 
 
 test('Similar sides to be "Equilateral"', () => {
