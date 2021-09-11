@@ -29,7 +29,7 @@ pipeline {
 
     stage('Build') {
       steps {
-         bat 'npm run-script build'
+         bat 'npm run build'
       }
     }     
   }
