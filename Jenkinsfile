@@ -2,6 +2,10 @@ pipeline {
   agent any
     
   tools {nodejs "node"}
+
+  environment {
+      CHROME_BIN = '/bin/google-chrome'
+  }
     
   stages {
         
@@ -15,8 +19,9 @@ pipeline {
       steps {
          bat 'npm test'
       }
-    }  
-        stage('Build') {
+    }
+      
+    stage('Build') {
       steps {
          bat 'npm build'
       }
