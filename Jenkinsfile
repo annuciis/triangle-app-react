@@ -14,6 +14,12 @@ pipeline {
         bat 'npm install'
       }
     }
+
+   stage('Build') {
+      steps {
+         bat 'npm run build'
+      }
+    } 
      
     stage('Unit tests') {
       steps {
@@ -26,11 +32,6 @@ pipeline {
         bat 'npm run cy:run'
       }
     }
-
-    stage('Build') {
-      steps {
-         bat 'npm run build'
-      }
-    }     
+    
   }
 }
