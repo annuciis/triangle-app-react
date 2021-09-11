@@ -15,15 +15,21 @@ pipeline {
       }
     }
      
-    stage('Test') {
+    stage('Unit tests') {
       steps {
          bat 'npm test'
       }
     }
-      
+
+    stage('e2e tests') {
+      steps {
+         bat 'npm run cy:ci'
+      }
+    }
+
     stage('Build') {
       steps {
-         bat 'npm build'
+         bat 'npm run-script build'
       }
     }     
   }
