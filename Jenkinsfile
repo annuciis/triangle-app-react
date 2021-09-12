@@ -1,31 +1,15 @@
 pipeline {
-  agent any
-    
-  tools {nodejs "node"}
-
-  environment {
-      CHROME_BIN = '/bin/google-chrome'
-  }
-    
-  stages {
-        
-    stage('Install dependencies') {
-      steps {
-        bat 'npm install'
-      }
+    agent {
+        docker {
+            image 'node:lts-buster-slim' 
+            args '-p 3000:3000' 
+        }
     }
-     
-    stage('Unit tests') {
-      steps {
-         bat 'npm test'
-      }
+    stages {
+        stage('Build') { 
+            steps {
+                bat 'npm install' 
+            }
+        }
     }
-
-    stage('e2e tests') {
-      steps {
-        bat 'npm run cy:run'
-      }
-    }
-    
-  }
 }
