@@ -1,8 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'node:lts-buster-slim' 
-            args '-p 7979:7979' 
+            image 'triangle-app-react:latest 
+            args '-p 3000:3000' 
         }
     }
     stages {
