@@ -6,7 +6,10 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build') {
+          environment {
+                  HOME="."
+                } 
             steps {
                 bat 'npm install' 
             }
