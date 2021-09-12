@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'triangle-app-react:latest 
+            image 'triangle-app-react:latest' 
             args '-p 3000:3000' 
         }
     }
